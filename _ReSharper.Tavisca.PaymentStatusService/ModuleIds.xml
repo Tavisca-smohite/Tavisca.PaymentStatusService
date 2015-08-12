@@ -1,5 +1,0 @@
-<Modules>
-  <Module PersistentId="26790B9A-A244-44C3-BA88-9F041674DA78" ModuleId="Tavisca.PaymentStatusService" />
-  <Module PersistentId="CBB2BAF2-0A8B-4C2B-B5CE-42408067D4FA" ModuleId="Tavisca.PaymentStatusService.Tests" />
-  <Module PersistentId="ABE92838-DC7A-4E26-973E-AEC1D43DCFB9" ModuleId="Tavisca.PaymentStatusService.ResourceLayer" />
-</Modules>
