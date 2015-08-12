@@ -16,12 +16,11 @@ namespace Tavisca.PaymentStatusService
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            var config = GlobalConfiguration.Configuration;
+            var json = config.Formatters.JsonFormatter;
+            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            WebApiConfig.Register(config);
         }
     }
 }

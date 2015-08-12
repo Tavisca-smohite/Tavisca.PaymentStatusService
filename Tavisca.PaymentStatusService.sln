@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeAnalysisRuleset", "Code
 		CodeAnalysisRuleset\TaviscaCodingPractices.ruleset = CodeAnalysisRuleset\TaviscaCodingPractices.ruleset
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonAssemblies", "CommonAssemblies", "{F04A199E-CA06-4863-A38A-31AC409453E4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonAssemblies", "CommonAssemblies", "{64F58218-2960-4A85-8628-49216C8AB83F}"
 	ProjectSection(SolutionItems) = preProject
 		CommonAssemblies\Microsoft.Practices.EnterpriseLibrary.Common.dll = CommonAssemblies\Microsoft.Practices.EnterpriseLibrary.Common.dll
 		CommonAssemblies\Microsoft.Practices.EnterpriseLibrary.Data.dll = CommonAssemblies\Microsoft.Practices.EnterpriseLibrary.Data.dll
@@ -46,6 +46,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonAssemblies", "CommonA
 		CommonAssemblies\Tavisca.TravelNxt.Shared.Plugins.dll = CommonAssemblies\Tavisca.TravelNxt.Shared.Plugins.dll
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tavisca.PaymentStatusService.ResourceLayer", "Tavisca.PaymentStatusService.ResourceLayer\Tavisca.PaymentStatusService.ResourceLayer.csproj", "{ABE92838-DC7A-4E26-973E-AEC1D43DCFB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{CBB2BAF2-0A8B-4C2B-B5CE-42408067D4FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBB2BAF2-0A8B-4C2B-B5CE-42408067D4FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBB2BAF2-0A8B-4C2B-B5CE-42408067D4FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE92838-DC7A-4E26-973E-AEC1D43DCFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE92838-DC7A-4E26-973E-AEC1D43DCFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE92838-DC7A-4E26-973E-AEC1D43DCFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE92838-DC7A-4E26-973E-AEC1D43DCFB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{26790B9A-A244-44C3-BA88-9F041674DA78} = {A9ED8535-E1FD-45D1-A936-9423588D7C50}
 		{CBB2BAF2-0A8B-4C2B-B5CE-42408067D4FA} = {3721AD62-2E24-438B-90B6-4C97CC9F16C6}
 		{A89EE16B-1065-46D7-99B5-0BFB35A5C397} = {FF37C972-44BF-4F5A-8B34-8D67F3004719}
-		{F04A199E-CA06-4863-A38A-31AC409453E4} = {FF37C972-44BF-4F5A-8B34-8D67F3004719}
+		{64F58218-2960-4A85-8628-49216C8AB83F} = {FF37C972-44BF-4F5A-8B34-8D67F3004719}
+		{ABE92838-DC7A-4E26-973E-AEC1D43DCFB9} = {381CEC9E-6216-4775-95A4-B67B9D21629C}
 	EndGlobalSection
 EndGlobal
