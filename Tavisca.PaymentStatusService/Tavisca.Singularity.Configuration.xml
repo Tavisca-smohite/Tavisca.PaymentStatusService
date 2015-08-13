@@ -53,9 +53,7 @@
         <dependency name="SqlSpSink" registeredAs="ISink" implementedAs="SqlSpSink" lifetimeType="PerThread"></dependency>
 
         <!--Logging Configuration [END]-->
-
         <dependency registeredAs="IPaymentStatusRepository" implementedAs="PaymentStatusRepository" lifetimeType="Singleton" name="PaymentStatusRepository"></dependency>
-        
         <dependency registeredAs="ICacheProvider" implementedAs="HttpRunTimeCacheProvider1" lifetimeType="Singleton" name="HttpCacheProvider"></dependency>
         <dependency registeredAs="ICacheProvider" implementedAs="AppFabricCacheProvider1" lifetimeType="Singleton" name="AppFabricCacheProvider" ></dependency>
 

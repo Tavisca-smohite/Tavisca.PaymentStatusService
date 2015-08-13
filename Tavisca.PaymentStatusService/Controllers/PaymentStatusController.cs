@@ -19,7 +19,7 @@ namespace Tavisca.PaymentStatusService.Controllers
         public PaymentStatus SavePaymentStatus([FromBody]PaymentStatus response)
         {
             //TODO:store data in table
-            var a = new PaymentStatus { Status = "Sucess" };
+            var a = new PaymentStatus();
             return a;
         }
     }
