@@ -24,7 +24,8 @@
     <add alias="ICallContextCreateBehavior" type="Tavisca.Singularity.ICallContextCreateBehavior, Tavisca.Singularity.Core"></add>
     <add alias="DefaultAPICallContextCreator" type="Tavisca.Frameworks.CulturePlugin.DefaultAPICallContextCreator, Tavisca.Frameworks.CulturePlugin" />
     <!--Logging Configuration [END]-->
- 
+    <add alias="IPaymentStatusRepository" type="Tavisca.PaymentStatusService.ResourceLayer.IPaymentStatusRepository,Tavisca.PaymentStatusService.ResourceLayer"></add>
+    <add alias="PaymentStatusRepository" type="Tavisca.PaymentStatusService.ResourceLayer.PaymentStatusRepository,Tavisca.PaymentStatusService.ResourceLayer"></add>
     <!-- Caching Configuration [START] -->
     <add alias="IResolveCacheProvider" type="Tavisca.TravelNxt.Shared.Entities.Caching.IResolveCacheProvider, Tavisca.TravelNxt.Shared.Entities" />
     <add alias="CacheProviderResolver" type="Tavisca.TravelNxt.Shared.Entities.Caching.CacheProviderResolver, Tavisca.TravelNxt.Shared.Entities" />
@@ -52,6 +53,8 @@
         <dependency name="SqlSpSink" registeredAs="ISink" implementedAs="SqlSpSink" lifetimeType="PerThread"></dependency>
 
         <!--Logging Configuration [END]-->
+
+        <dependency registeredAs="IPaymentStatusRepository" implementedAs="PaymentStatusRepository" lifetimeType="Singleton" name="PaymentStatusRepository"></dependency>
 
         <dependency registeredAs="ICacheProvider" implementedAs="HttpRunTimeCacheProvider1" lifetimeType="Singleton" name="HttpCacheProvider"></dependency>
         <dependency registeredAs="ICacheProvider" implementedAs="AppFabricCacheProvider1" lifetimeType="Singleton" name="AppFabricCacheProvider" ></dependency>
