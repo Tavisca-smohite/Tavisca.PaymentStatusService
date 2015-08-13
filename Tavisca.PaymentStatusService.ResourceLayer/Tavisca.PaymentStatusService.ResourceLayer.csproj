@@ -48,6 +48,9 @@
       <DependentUpon>PaymentStatus.dbml</DependentUpon>
     </Compile>
     <Compile Include="DataModel\PaymentStatusDBContext.cs" />
+    <Compile Include="Entities\PaymentStatus.cs" />
+    <Compile Include="Interfaces\IPaymentStatusRepository.cs" />
+    <Compile Include="PaymentStatusRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,9 +68,7 @@
       <DependentUpon>PaymentStatus.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
