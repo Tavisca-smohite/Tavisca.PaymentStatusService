@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tavisca.PaymentStatusService.ResourceLayer.DataModel;
 
 namespace Tavisca.PaymentStatusService.ResourceLayer
 {
     public class PaymentStatusDBContext : IDisposable
     {
-        public static void UsingFraudDbRead(Action<PaymentStatusDataContext> action)
+        public static void UsingPaymentStatusDbRead(Action<PaymentStatusDataContext> action)
         {
             using (var context = new PaymentStatusDBContext())
             {
@@ -16,7 +17,7 @@ namespace Tavisca.PaymentStatusService.ResourceLayer
             }
         }
 
-        public static void UsingFraudDbWrite(Action<PaymentStatusDataContext> action)
+        public static void UsingPaymentStatusDbWrite(Action<PaymentStatusDataContext> action)
         {
             using (var context = new PaymentStatusDBContext())
             {

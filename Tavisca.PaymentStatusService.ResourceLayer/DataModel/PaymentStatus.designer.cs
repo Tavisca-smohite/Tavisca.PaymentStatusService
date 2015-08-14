@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tavisca.PaymentStatusService.ResourceLayer
+namespace Tavisca.PaymentStatusService.ResourceLayer.DataModel
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -22,6 +22,7 @@ namespace Tavisca.PaymentStatusService.ResourceLayer
 	using System;
 	
 	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dTripDataWareHouse_Sync_v_4_4")]
 	public partial class PaymentStatusDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -30,6 +31,12 @@ namespace Tavisca.PaymentStatusService.ResourceLayer
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public PaymentStatusDataContext() : 
+				base(global::Tavisca.PaymentStatusService.ResourceLayer.Properties.Settings.Default.dTripDataWareHouse_Sync_v_4_4ConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public PaymentStatusDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -53,6 +60,13 @@ namespace Tavisca.PaymentStatusService.ResourceLayer
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertTripFolderDetails_dboPaymentStatus")]
+		public int spInsertTripFolderDetails_dboPaymentStatus([global::System.Data.Linq.Mapping.ParameterAttribute(Name="TripFolderId", DbType="UniqueIdentifier")] System.Nullable<System.Guid> tripFolderId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TripProductId", DbType="UniqueIdentifier")] System.Nullable<System.Guid> tripProductId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RequestType", DbType="NVarChar(256)")] string requestType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ResponseTime", DbType="Float")] System.Nullable<double> responseTime, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Status", DbType="NVarChar(32)")] string status, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SupplierRequestTime", DbType="DateTime")] System.Nullable<System.DateTime> supplierRequestTime, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SupplierResponseTime", DbType="DateTime")] System.Nullable<System.DateTime> supplierResponseTime, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SupplierResponse", DbType="NVarChar(MAX)")] string supplierResponse)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tripFolderId, tripProductId, requestType, responseTime, status, supplierRequestTime, supplierResponseTime, amount, supplierResponse);
+			return ((int)(result.ReturnValue));
 		}
 	}
 }

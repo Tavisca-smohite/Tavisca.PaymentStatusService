@@ -1,26 +1,38 @@
 ﻿
 using System;
 using System.Web.Http;
-using Tavisca.PaymentStatusService.ResourceLayer;
-using Tavisca.Singularity;
-using PaymentStatus = Tavisca.PaymentStatusService.Models.PaymentStatus;
+using Tavisca.PaymentStatusService.Models;
+using Tavisca.TravelNxt.Shared.Entities.Infrastructure;
 
 namespace Tavisca.PaymentStatusService.Controllers
 {
     public class PaymentstatusController : ApiController
     {
-        private IPaymentStatusRepository _paymentStatusRepository;
+        // ....api/paymentstatus/SavePaymentStatus   
+        public Models.PaymentStatus SavePaymentStatus([FromBody]Models.PaymentStatus response)
+        {
+            try
+            {
+                var status = new PaymentStatusHelper().SavePaymentStatusObjectsPerProduct(response);
+                return MapStatus(status);
+            }
+            catch (Exception exception)
+            {
+                LogUtility.GetLogger().WriteAsync(exception.ToContextualEntry(), "Log Only Policy");
+                return MapStatus(false);
+            }         
+        }
 
-        public PaymentstatusController()
+        private Models.PaymentStatus MapStatus(bool status)
         {
-             _paymentStatusRepository = RuntimeContext.Resolver.Resolve<IPaymentStatusRepository>("PaymentStatusRepository");
+            if(status==true)
+            {
+                return new PaymentStatus{Status = Status.Success.ToString()};
+            }         
+                return new PaymentStatus{Status = Status.Failure.ToString()};
+            
         }
-       
-        public PaymentStatus SavePaymentStatus([FromBody]PaymentStatus response)
-        {
-            //TODO:store data in table
-            var a = new PaymentStatus();
-            return a;
-        }
+ 
     }
+
 }

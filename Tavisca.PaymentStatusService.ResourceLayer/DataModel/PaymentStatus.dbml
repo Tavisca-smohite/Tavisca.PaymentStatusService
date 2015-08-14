@@ -1,1 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Class="PaymentStatusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dTripDataWareHouse_Sync_v_4_4" Class="PaymentStatusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=RoviaDev;Initial Catalog=dTripDataWareHouse_Sync_v_4_4;Integrated Security=True" SettingsObjectName="Tavisca.PaymentStatusService.ResourceLayer.Properties.Settings" SettingsPropertyName="dTripDataWareHouse_Sync_v_4_4ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.spInsertTripFolderDetails_dboPaymentStatus" Method="spInsertTripFolderDetails_dboPaymentStatus">
+    <Parameter Name="TripFolderId" Parameter="tripFolderId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="TripProductId" Parameter="tripProductId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="RequestType" Parameter="requestType" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="ResponseTime" Parameter="responseTime" Type="System.Double" DbType="Float" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(32)" />
+    <Parameter Name="SupplierRequestTime" Parameter="supplierRequestTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="SupplierResponseTime" Parameter="supplierResponseTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="SupplierResponse" Parameter="supplierResponse" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

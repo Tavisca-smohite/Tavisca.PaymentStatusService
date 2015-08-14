@@ -39,6 +39,18 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tavisca.Frameworks.Logging">
+      <HintPath>..\CommonAssemblies\Tavisca.Frameworks.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Tavisca.Frameworks.Logging.Extensions">
+      <HintPath>..\CommonAssemblies\Tavisca.Frameworks.Logging.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Tavisca.TravelNxt.Shared.Entities">
+      <HintPath>..\CommonAssemblies\Tavisca.TravelNxt.Shared.Entities.dll</HintPath>
+    </Reference>
+    <Reference Include="Tavisca.TravelNxt.Shared.Exceptions">
+      <HintPath>..\CommonAssemblies\Tavisca.TravelNxt.Shared.Exceptions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConfiguration.cs" />
@@ -52,12 +64,22 @@
     <Compile Include="Interfaces\IPaymentStatusRepository.cs" />
     <Compile Include="PaymentStatusRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DataModel\PaymentStatus.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>PaymentStatus.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
