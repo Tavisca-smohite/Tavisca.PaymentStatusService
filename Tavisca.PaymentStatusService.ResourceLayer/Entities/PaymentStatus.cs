@@ -18,6 +18,6 @@ namespace Tavisca.PaymentStatusService.ResourceLayer
         public DateTime SupplierResponseTime { get; set; }
         public double TimeTaken { get; set; }
         public decimal PerProductAmount { get; set; }
-
+        public Guid ApiSessionId { get; set; }
     }
 }

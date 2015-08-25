@@ -52,6 +52,7 @@ namespace Tavisca.PaymentStatusService
                var paymentStatusObjectInResourceLayer = new DTO.PaymentStatus();
                paymentStatusObjectInResourceLayer.TripFolderId = paymentStatusObject.TripFolderId;
                paymentStatusObjectInResourceLayer.TripProductId = tripProductId;
+               paymentStatusObjectInResourceLayer.ApiSessionId = paymentStatusObject.ApiSessionId;
                paymentStatusObjectInResourceLayer.TimeTaken = paymentStatusObject.TimeTaken;
                paymentStatusObjectInResourceLayer.RequestType = paymentStatusObject.RequestType;
                paymentStatusObjectInResourceLayer.SupplierResponse = paymentStatusObject.SupplierResponse;
