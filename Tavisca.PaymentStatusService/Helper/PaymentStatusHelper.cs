@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using Tavisca.Singularity;
 using Tavisca.TravelNxt.Shared.Entities.Infrastructure;
@@ -47,26 +48,43 @@ namespace Tavisca.PaymentStatusService
        {
            var paymentStatusObjectsList = new List<DTO.PaymentStatus>();
            int i = 0;
+           if(paymentStatusObject.TripProductIds!=null)
            foreach (var tripProductId in paymentStatusObject.TripProductIds)
-           {
-               var paymentStatusObjectInResourceLayer = new DTO.PaymentStatus();
-               paymentStatusObjectInResourceLayer.TripFolderId = paymentStatusObject.TripFolderId;
-               paymentStatusObjectInResourceLayer.TripProductId = tripProductId;
-               paymentStatusObjectInResourceLayer.ApiSessionId = paymentStatusObject.ApiSessionId;
-               paymentStatusObjectInResourceLayer.TimeTaken = paymentStatusObject.TimeTaken;
-               paymentStatusObjectInResourceLayer.RequestType = paymentStatusObject.RequestType;
-               paymentStatusObjectInResourceLayer.SupplierResponse = paymentStatusObject.SupplierResponse;
-               paymentStatusObjectInResourceLayer.SupplierRequestTime = paymentStatusObject.SupplierRequestTime;
-               paymentStatusObjectInResourceLayer.SupplierResponseTime = paymentStatusObject.SupplierResponseTime;
-               paymentStatusObjectInResourceLayer.Status = paymentStatusObject.Status;
+           {               
+               var paymentStatusObjectInResourceLayer = DTOPaymentStatusObject(paymentStatusObject);             
+               paymentStatusObjectInResourceLayer.TripProductId = tripProductId;             
                paymentStatusObjectInResourceLayer.PerProductAmount = (paymentStatusObject.PerProductAmount!=null &&
                                                                        paymentStatusObject.PerProductAmount.Count>0)?
                                                                        paymentStatusObject.PerProductAmount[i++]
-                                                                         : 0;     
+                                                                         : 0;               
                paymentStatusObjectsList.Add(paymentStatusObjectInResourceLayer);                                                             
+           }
+           else
+           {
+               var paymentStatusObjectInResourceLayer = DTOPaymentStatusObject(paymentStatusObject);
+               paymentStatusObjectInResourceLayer.PerProductAmount = (paymentStatusObject.PerProductAmount != null &&
+                                                                      paymentStatusObject.PerProductAmount.Count > 0) ?
+                                                                      paymentStatusObject.PerProductAmount[0]
+                                                                        : 0;        
+               paymentStatusObjectsList.Add(paymentStatusObjectInResourceLayer); 
            }
            return paymentStatusObjectsList;
        }
-       
+
+        private static DTO.PaymentStatus DTOPaymentStatusObject(Models.PaymentStatus paymentStatusObject)
+        {
+            var paymentStatusObjectInResourceLayer = new DTO.PaymentStatus();
+            paymentStatusObjectInResourceLayer.TripFolderId = paymentStatusObject.TripFolderId;            
+            paymentStatusObjectInResourceLayer.ApiSessionId = paymentStatusObject.ApiSessionId;
+            paymentStatusObjectInResourceLayer.TimeTaken = paymentStatusObject.TimeTaken;
+            paymentStatusObjectInResourceLayer.RequestType = paymentStatusObject.RequestType;
+            paymentStatusObjectInResourceLayer.SupplierResponse = paymentStatusObject.SupplierResponse;
+            paymentStatusObjectInResourceLayer.SupplierRequestTime = paymentStatusObject.SupplierRequestTime;
+            paymentStatusObjectInResourceLayer.SupplierResponseTime = paymentStatusObject.SupplierResponseTime;
+            paymentStatusObjectInResourceLayer.Status = paymentStatusObject.Status;
+            paymentStatusObjectInResourceLayer.ProviderId = paymentStatusObject.ProviderId;
+            return paymentStatusObjectInResourceLayer;
+        }
+
     }
 }

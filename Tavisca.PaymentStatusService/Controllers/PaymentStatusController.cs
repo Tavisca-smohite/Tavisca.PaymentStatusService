@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Threading.Tasks;
 using System.Web.Http;
 using Tavisca.PaymentStatusService.Models;
 using Tavisca.TravelNxt.Shared.Entities.Infrastructure;
@@ -9,17 +10,17 @@ namespace Tavisca.PaymentStatusService.Controllers
     public class PaymentstatusController : ApiController
     {
         // ....api/paymentstatus/SavePaymentStatus   
-        public Models.PaymentStatus SavePaymentStatus([FromBody]Models.PaymentStatus response)
+        public PaymentStatus SavePaymentStatus([FromBody]Models.PaymentStatus response)
         {
             try
             {
-                var status = new PaymentStatusHelper().SavePaymentStatusObjectsPerProduct(response);
+                var status =  new PaymentStatusHelper().SavePaymentStatusObjectsPerProduct(response);
                 return MapStatus(status);
             }
             catch (Exception exception)
             {
                 LogUtility.GetLogger().WriteAsync(exception.ToContextualEntry(), "Log Only Policy");
-                return MapStatus(false);
+                return  MapStatus(false);
             }         
         }
 

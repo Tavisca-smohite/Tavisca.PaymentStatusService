@@ -12,10 +12,11 @@ namespace Tavisca.PaymentStatusService.Models
         public string RequestType { get; set; }
         public string SupplierResponse { get; set; }
         public string Status { get; set; }
-        public DateTime SupplierRequestTime { get; set; }
+        public DateTime SupplierRequestTime{get; set; }
         public DateTime SupplierResponseTime { get; set; }
         public double TimeTaken { get; set; }
         public List<decimal> PerProductAmount { get; set; }
         public Guid ApiSessionId { get; set; }
+        public int ProviderId { get; set; }
     }
 }

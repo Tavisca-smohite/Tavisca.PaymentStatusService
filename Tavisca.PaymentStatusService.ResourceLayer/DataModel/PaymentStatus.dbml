@@ -11,6 +11,7 @@
     <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
     <Parameter Name="SupplierResponse" Parameter="supplierResponse" Type="System.String" DbType="NVarChar(MAX)" />
     <Parameter Name="ApiSessionId" Parameter="apiSessionId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ProviderId" Parameter="providerId" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

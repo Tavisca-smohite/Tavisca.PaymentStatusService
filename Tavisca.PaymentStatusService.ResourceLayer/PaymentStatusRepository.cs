@@ -25,7 +25,8 @@ namespace Tavisca.PaymentStatusService.ResourceLayer
                                                                         CheckDate(paymentStatus.SupplierResponseTime)?paymentStatus.SupplierResponseTime:(DateTime?) null,
                                                                         paymentStatus.PerProductAmount,
                                                                         paymentStatus.SupplierResponse,
-                                                                        paymentStatus.ApiSessionId));
+                                                                        paymentStatus.ApiSessionId,
+                                                                        paymentStatus.ProviderId));
                 return true;
             }
             catch (Exception exception)
